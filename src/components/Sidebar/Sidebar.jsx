@@ -4,8 +4,13 @@ import { BiBarChartAlt2 } from "react-icons/bi";
 import { DiGoogleAnalytics } from "react-icons/di";
 import { CiBullhorn } from "react-icons/ci";
 import { GoChecklist } from "react-icons/go";
+import { Fa500Px } from "react-icons/fa";
 import { AiFillPlusCircle } from "react-icons/ai";
-import { IoPaperPlaneOutline, IoSunnySharp, IoIosMoon } from "react-icons/io5";
+import {
+  IoPaperPlaneOutline,
+  IoSunnySharp,
+  IoMoonSharp,
+} from "react-icons/io5";
 import { RiQuestionnaireLine } from "react-icons/ri";
 import "./Sidebar.css";
 
@@ -13,7 +18,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar-header">
-        <h1>BetterTasks</h1>
+        <h1><Fa500Px />BetterTasks</h1>
         <MdKeyboardDoubleArrowLeft />
       </div>
       <div className="sidebar-main-menu">
@@ -52,18 +57,14 @@ const Sidebar = () => {
           FAQs
         </button>
         <div className="sidebar-theme-options">
-          <div className="theme-option lightmode">
-            <p>
-              <IoSunnySharp />
-              Light
-            </p>
-          </div>
-          <div className="theme-option darkmode">
-            <p>
-              <IoIosMoon />
-              Dark
-            </p>
-          </div>
+          <p>
+            <IoSunnySharp />
+            Light
+          </p>
+          <p>
+            <IoMoonSharp />
+            Dark
+          </p>
         </div>
       </div>
       <div className="sidebar-profile"></div>
