@@ -72,7 +72,7 @@ const Sidebar = () => {
           FAQs
         </button>
         <div className="sidebar-theme-options">
-          <button>
+          <button onClick={() => handleThemeChange("light")} className={theme === "light" ? "active" : ""}>
             <IoSunnySharp />
             Light
           </button>
