@@ -123,6 +123,15 @@
   transition: all 0.2s;
 }
 
+body.light {
+  background-color: #ffffff;
+  color: #333;
+}
+body.dark {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
 .sidebar-theme-options button:active {
   color: black;
   background-color: #e0e0e0;
@@ -134,15 +143,6 @@
   margin-top: 20px;
   padding-top: 10px;
   border-top: 1px solid #eee;
-}
-
-body.light {
-    background-color: #ffffff;
-    color: #333;
-}
-body.dark{
-    background-color: #1a1a1a;
-    color: #e0e0e0;
 }
 
 /* Collapsed State */
