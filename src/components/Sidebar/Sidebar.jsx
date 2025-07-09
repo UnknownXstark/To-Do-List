@@ -22,7 +22,7 @@ const Sidebar = () => {
     setIsCollapsed(!isCollapsed);
   };
 
-  const handleThemeChange = () => {
+  const handleThemeChange = (selectedTheme) => {
     setTheme(selectedTheme);
   };
 
