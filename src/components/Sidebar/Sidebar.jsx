@@ -18,7 +18,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar-header">
-        <h1><Fa500Px />BetterTasks</h1>
+        <h1>BetterTasks</h1>
         <MdKeyboardDoubleArrowLeft />
       </div>
       <div className="sidebar-main-menu">
@@ -57,14 +57,14 @@ const Sidebar = () => {
           FAQs
         </button>
         <div className="sidebar-theme-options">
-          <p>
+          <button>
             <IoSunnySharp />
             Light
-          </p>
-          <p>
+          </button>
+          <button>
             <IoMoonSharp />
             Dark
-          </p>
+          </button>
         </div>
       </div>
       <div className="sidebar-profile"></div>
