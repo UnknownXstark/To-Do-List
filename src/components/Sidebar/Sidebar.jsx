@@ -15,8 +15,12 @@ import { RiQuestionnaireLine } from "react-icons/ri";
 import "./Sidebar.css";
 
 const Sidebar = () => {
-    const [isCollapsed, setIsCollapse] = useState(fasle);
-    const [theme, seetTheme] = useState("light")
+  const [isCollapsed, setIsCollapsed] = useState(fasle);
+  const [theme, seetTheme] = useState("light");
+
+  const handleToggle = () => {
+    setIsCollapsed(!isCollapsed);
+  };
 
   return (
     <div className="sidebar">
