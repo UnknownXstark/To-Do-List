@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { BiBarChartAlt2 } from "react-icons/bi";
 import { DiGoogleAnalytics } from "react-icons/di";
@@ -15,6 +15,9 @@ import { RiQuestionnaireLine } from "react-icons/ri";
 import "./Sidebar.css";
 
 const Sidebar = () => {
+    const [isCollapsed, setIsCollapse] = useState(fasle);
+    const [theme, seetTheme] = useState("light")
+
   return (
     <div className="sidebar">
       <div className="sidebar-header">
