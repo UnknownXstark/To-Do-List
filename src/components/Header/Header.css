@@ -1,0 +1,12 @@
+.header{
+    height: 100px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 5px 10px;
+}
+
+.header p{
+    color: #a8a8a8;
+}
