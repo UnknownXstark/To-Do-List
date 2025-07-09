@@ -4,6 +4,9 @@ import { BiBarChartAlt2 } from "react-icons/bi";
 import { DiGoogleAnalytics } from "react-icons/di";
 import { CiBullhorn } from "react-icons/ci";
 import { GoChecklist } from "react-icons/go";
+import { AiFillPlusCircle } from "react-icons/ai";
+import { IoPaperPlaneOutline } from "react-icons/io5";
+import { RiQuestionnaireLine } from "react-icons/ri";
 
 const Sidebar = () => {
   return (
@@ -13,7 +16,7 @@ const Sidebar = () => {
         <MdKeyboardDoubleArrowLeft />
       </div>
       <div className="sidebar-main-menu">
-        <p>MAIN MENU</p>
+        <h3>MAIN MENU</h3>
         <button>
           <GoChecklist />
           To-Do
@@ -31,8 +34,22 @@ const Sidebar = () => {
           Leaderboard
         </button>
       </div>
-      <div className="sidebar-lists"></div>
-      <div className="sidebar-extra-options"></div>
+      <div className="sidebar-lists">
+        <div className="sidebar-lists-top">
+          <h3>LISTS</h3>
+          <AiFillPlusCircle />
+        </div>
+      </div>
+      <div className="sidebar-extra-options">
+        <button>
+          <IoPaperPlaneOutline />
+          Invites
+        </button>
+        <button>
+          <RiQuestionnaireLine />
+          FAQs
+        </button>
+      </div>
       <div className="sidebar-profile"></div>
     </div>
   );
