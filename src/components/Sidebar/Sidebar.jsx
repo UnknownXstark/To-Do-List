@@ -34,7 +34,7 @@ const Sidebar = () => {
     <div className={`sidebar ${isCollapsed ? "collapsed" : ""}`}>
       <div className="sidebar-header">
         <h1>BetterTasks</h1>
-        <MdKeyboardDoubleArrowLeft />
+        <MdKeyboardDoubleArrowLeft onClick={handleToggle} />
       </div>
       <div className="sidebar-main-menu">
         <h3>MAIN MENU</h3>
