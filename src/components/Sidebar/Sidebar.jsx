@@ -76,7 +76,7 @@ const Sidebar = () => {
             <IoSunnySharp />
             Light
           </button>
-          <button>
+          <button onClick={() => handleThemeChange("dark")} className={theme === "dark" ? "active" : ""}>
             <IoMoonSharp />
             Dark
           </button>
