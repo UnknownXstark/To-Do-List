@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { BiBarChartAlt2 } from "react-icons/bi";
 import { DiGoogleAnalytics } from "react-icons/di";
@@ -15,7 +15,7 @@ import { RiQuestionnaireLine } from "react-icons/ri";
 import "./Sidebar.css";
 
 const Sidebar = () => {
-  const [isCollapsed, setIsCollapsed] = useState(fasle);
+  const [isCollapsed, setIsCollapsed] = useState(false);
   const [theme, setTheme] = useState("light");
 
   const handleToggle = () => {
