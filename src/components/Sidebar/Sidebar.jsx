@@ -27,7 +27,7 @@ const Sidebar = () => {
   };
 
   useEffect(() => {
-    document.boddy.className = theme;
+    document.body.className = theme;
   }, [theme]);
 
   return (
