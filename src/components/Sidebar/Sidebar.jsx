@@ -5,8 +5,9 @@ import { DiGoogleAnalytics } from "react-icons/di";
 import { CiBullhorn } from "react-icons/ci";
 import { GoChecklist } from "react-icons/go";
 import { AiFillPlusCircle } from "react-icons/ai";
-import { IoPaperPlaneOutline } from "react-icons/io5";
+import { IoPaperPlaneOutline, IoSunnySharp, IoIosMoon } from "react-icons/io5";
 import { RiQuestionnaireLine } from "react-icons/ri";
+import "./Sidebar.css";
 
 const Sidebar = () => {
   return (
@@ -17,38 +18,53 @@ const Sidebar = () => {
       </div>
       <div className="sidebar-main-menu">
         <h3>MAIN MENU</h3>
-        <button>
+        <button className="menu-item">
           <GoChecklist />
           To-Do
         </button>
-        <button>
+        <button className="menu-item">
           <CiBullhorn />
           Share My Impact
         </button>
-        <button>
+        <button className="menu-item">
           <DiGoogleAnalytics />
           Analytics
         </button>
-        <button>
+        <button className="menu-item">
           <BiBarChartAlt2 />
           Leaderboard
         </button>
       </div>
       <div className="sidebar-lists">
-        <div className="sidebar-lists-top">
+        <div className="sidebar-lists-header">
           <h3>LISTS</h3>
           <AiFillPlusCircle />
         </div>
+        <div className="sidebar-lists-projects"></div>
       </div>
       <div className="sidebar-extra-options">
-        <button>
+        <button className="extra-item">
           <IoPaperPlaneOutline />
           Invites
         </button>
-        <button>
+        <button className="extra-item">
           <RiQuestionnaireLine />
           FAQs
         </button>
+        <div className="sidebar-theme-options">
+          <div className="theme-option lightmode">
+            <p>
+              <IoSunnySharp />
+              Light
+            </p>
+          </div>
+          <div className="theme-option darkmode">
+            <p>
+              <IoIosMoon />
+              Dark
+            </p>
+          </div>
+        </div>
       </div>
       <div className="sidebar-profile"></div>
     </div>
