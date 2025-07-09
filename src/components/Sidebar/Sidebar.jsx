@@ -24,7 +24,11 @@ const Sidebar = () => {
 
   const handleThemeChange = () => {
     setTheme(selectedTheme);
-  }
+  };
+
+  useEffect(() => {
+    document.boddy.className = theme;
+  });
 
   return (
     <div className="sidebar">
