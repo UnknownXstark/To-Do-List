@@ -16,11 +16,15 @@ import "./Sidebar.css";
 
 const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(fasle);
-  const [theme, seetTheme] = useState("light");
+  const [theme, setTheme] = useState("light");
 
   const handleToggle = () => {
     setIsCollapsed(!isCollapsed);
   };
+
+  const handleThemeChange = () => {
+    setTheme(selectedTheme);
+  }
 
   return (
     <div className="sidebar">
