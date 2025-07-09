@@ -31,7 +31,7 @@ const Sidebar = () => {
   }, [theme]);
 
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${isCollapsed ? "collapsed" : ""}`}>
       <div className="sidebar-header">
         <h1>BetterTasks</h1>
         <MdKeyboardDoubleArrowLeft />
