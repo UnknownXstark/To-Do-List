@@ -13,13 +13,13 @@
   transition: width 0.5s ease;
   font-size: 14px;
 }
-body.light.sidebar{
-    background-color: #ffffff;
-    color: #333;
+body.light.sidebar {
+  background-color: #ffffff;
+  color: #333;
 }
-body.dark.sidebar{
-    background-color: #1a1a1a;
-    color: #e0e0e0;
+body.dark.sidebar {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
 }
 
 .sidebar-header {
@@ -34,6 +34,12 @@ body.dark.sidebar{
   font-weight: 800;
   color: black;
   margin: 0;
+}
+body.light .sidebar-header h1 {
+  color: black;
+}
+body.dark .sidebar-header h1 {
+  color: #e0e0e0;
 }
 
 .sidebar-header svg {
