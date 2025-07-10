@@ -220,7 +220,7 @@ body.dark {
   color: #e7e9ea;
 }
 
-.sidebar-theme-options button.active {
+body.light .sidebar-theme-options button.active {
   color: black;
   background-color: #e0e0e0;
   border: 1px solid #cecece;
