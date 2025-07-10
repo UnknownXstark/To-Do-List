@@ -26,6 +26,7 @@ const Sidebar = () => {
 
   const handleThemeChange = (selectedTheme) => {
     setTheme(selectedTheme);
+    localStorage.setItem("theme", selectedTheme)
   };
 
   useEffect(() => {
