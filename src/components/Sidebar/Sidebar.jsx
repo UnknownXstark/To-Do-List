@@ -16,7 +16,9 @@ import "./Sidebar.css";
 
 const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("theme") || "light";
+  });
 
   const handleToggle = () => {
     setIsCollapsed(!isCollapsed);
@@ -72,11 +74,17 @@ const Sidebar = () => {
           FAQs
         </button>
         <div className="sidebar-theme-options">
-          <button onClick={() => handleThemeChange("light")} className={theme === "light" ? "active" : ""}>
+          <button
+            onClick={() => handleThemeChange("light")}
+            className={theme === "light" ? "active" : ""}
+          >
             <IoSunnySharp />
             Light
           </button>
-          <button onClick={() => handleThemeChange("dark")} className={theme === "dark" ? "active" : ""}>
+          <button
+            onClick={() => handleThemeChange("dark")}
+            className={theme === "dark" ? "active" : ""}
+          >
             <IoMoonSharp />
             Dark
           </button>
