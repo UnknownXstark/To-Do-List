@@ -48,6 +48,14 @@ body.dark .sidebar-header h1 {
   color: #666;
 }
 
+body.light .sidebar-header svg {
+  color: #666;
+}
+
+body.dark .sidebar-header svg {
+  color: #a0a0a0;
+}
+
 .sidebar-main-menu h3,
 .sidebar-lists-header h3 {
   font-size: 14px;
@@ -55,6 +63,16 @@ body.dark .sidebar-header h1 {
   color: #666;
   margin: 0 0 10px 0;
   text-transform: uppercase;
+}
+
+body.light .sidebar-main-menu h3,
+body.light .sidebar-lists-header h3 {
+  color: #666;
+}
+
+body.dark .sidebar-main-menu h3,
+body.dark .sidebar-lists-header h3 {
+  color: #a0a0a0;
 }
 
 .sidebar-main-menu button,
