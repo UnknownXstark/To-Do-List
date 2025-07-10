@@ -220,6 +220,20 @@ body.dark {
   color: #e7e9ea;
 }
 
+.sidebar-theme-options button.active {
+  color: black;
+  background-color: #e0e0e0;
+  border: 1px solid #cecece;
+  box-shadow: 4px 4px 10px #bcbcbc, inset -4px -4px 10px #ffffff;
+}
+
+body.dark .sidebar-theme-options button.active {
+  color: #ffffff;
+  background-color: #1d2631;
+  border: 1px solid #2f3336;
+  box-shadow: 2px 2px 5px #0f1419, inset -2px -2px 5px #252b30;
+}
+
 .sidebar-theme-options button:active {
   color: black;
   background-color: #e0e0e0;
