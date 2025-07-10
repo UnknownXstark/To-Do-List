@@ -264,7 +264,7 @@ body.dark .sidebar-profile {
 
 /* Collapsed State */
 .sidebar.collapsed {
-  width: 60px;
+  width: 30px;
 }
 
 .sidebar.collapsed .sidebar-header h1 {
