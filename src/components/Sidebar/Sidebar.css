@@ -123,6 +123,16 @@ body.dark .sidebar-extra-options button:hover {
   color: #666;
 }
 
+body.light .menu-item svg,
+body.light .extra-item svg {
+  color: #666;
+}
+
+body.dark .menu-item svg,
+body.dark .extra-item svg {
+  color: #a0a0a0;
+}
+
 .sidebar-lists {
   margin-top: 20px;
 }
@@ -138,6 +148,14 @@ body.dark .sidebar-extra-options button:hover {
   font-size: 20px;
   color: blue;
   cursor: pointer;
+}
+
+body.light .sidebar-lists-header svg {
+  color: blue;
+}
+
+body.dark .sidebar-lists-header svg {
+  color: #4a90e2; /* Adjusted blue for dark mode contrast */
 }
 
 .sidebar-lists-projects {
