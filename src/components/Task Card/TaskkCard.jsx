@@ -21,6 +21,8 @@ const TaskkCard = () => {
       setNewTask("");
     }
   };
+
+  const handleToggleComplete = (id) => {};
   return (
     <div className="taskcard">
       <div className="taskcard-head">
