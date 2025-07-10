@@ -1,5 +1,6 @@
 import React from 'react'
 import './TaskCard.css'
+import { CgMathPlus } from "react-icons/cg";
 
 const TaskkCard = () => {
   return (
@@ -10,7 +11,7 @@ const TaskkCard = () => {
         <div className='taskcard-tasks'></div>
         <div className='taskcard-footer'>
             <button>Finish</button>
-            <button>Add task</button>
+            <button><CgMathPlus /> Add task</button>
         </div>
     </div>
   )
