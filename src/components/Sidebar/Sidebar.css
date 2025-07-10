@@ -91,6 +91,16 @@ body.dark .sidebar-lists-header h3 {
   transition: background-color 0.2s;
 }
 
+body.light .sidebar-main-menu button,
+body.light .sidebar-extra-options button {
+  color: black;
+}
+
+body.light .sidebar-main-menu button:hover,
+body.light .sidebar-extra-options button:hover {
+  background-color: #f5f5f5;
+}
+
 .sidebar-main-menu button:hover,
 .sidebar-extra-options button:hover {
   background-color: #f5f5f5;
