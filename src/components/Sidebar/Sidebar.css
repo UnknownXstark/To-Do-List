@@ -271,10 +271,18 @@ body.dark .sidebar-profile {
   display: none;
 }
 
+.sidebar.collapsed .sidebar-header svg {
+  transition: 0.5s ease;
+  transform: rotate(180deg);
+}
+
 .sidebar.collapsed .sidebar-main-menu button,
-.sidebar.collapsed .sidebar-extra-options button,
-.sidebar.collapsed .sidebar-lists-header h3 {
-  justify-content: center;
+.sidebar.collapsed .sidebar-main-menu h3,
+.sidebar.collapsed .sidebar-extra-options,
+.sidebar.collapsed .sidebar-lists-header h3,
+.sidebar.collapsed .sidebar-lists-header svg, 
+.sidebar.collapsed .sidebar-theme-options{
+  display: none;
 }
 
 .sidebar.collapsed .menu-item svg,
