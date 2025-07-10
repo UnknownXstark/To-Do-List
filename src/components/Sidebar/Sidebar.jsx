@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRigh } from "react-icons/md";
+import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { BiBarChartAlt2 } from "react-icons/bi";
 import { DiGoogleAnalytics } from "react-icons/di";
 import { CiBullhorn } from "react-icons/ci";

@@ -280,9 +280,10 @@ body.dark .sidebar-profile {
 .sidebar.collapsed .sidebar-main-menu h3,
 .sidebar.collapsed .sidebar-extra-options,
 .sidebar.collapsed .sidebar-lists-header h3,
-.sidebar.collapsed .sidebar-lists-header svg, 
-.sidebar.collapsed .sidebar-theme-options{
-  display: none;
+.sidebar.collapsed .sidebar-lists-header svg,
+.sidebar.collapsed .sidebar-theme-options {
+  opacity: 0;
+  transform: translateX(-20px) scale(0.9);
 }
 
 .sidebar.collapsed .menu-item svg,
