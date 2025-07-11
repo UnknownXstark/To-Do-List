@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import "./TaskCard.css";
 import { CgMathPlus } from "react-icons/cg";
+import { MdDelete, MdModeEdit } from "react-icons/md";
 
 const TaskkCard = () => {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
+  const [editingTask, setEditingTask] = useState(null);
+  const [editText, setEditText] = useState("");
 
   const handleAddTask = (e) => {
     e.preventDefault();
@@ -22,7 +25,14 @@ const TaskkCard = () => {
     }
   };
 
-  const handleToggleComplete = (id) => {};
+  const handleToggleComplete = (id) => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === id ? { ...task, completed: !task.completed } : task
+      )
+    );
+  };
+  
   return (
     <div className="taskcard">
       <div className="taskcard-head">
@@ -58,7 +68,12 @@ const TaskkCard = () => {
               <span className={`priority-tag ${task.priority.toLowerCase()}`}>
                 {task.priority}
               </span>
-              {/* <button className="finish-btn">Finish</button> */}
+              <button className="delete-btn">
+                <MdDelete />
+              </button>
+              <button className="edit-btn">
+                <MdModeEdit />
+              </button>
             </div>
           ))}
         </ul>
