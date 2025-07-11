@@ -106,6 +106,7 @@ const TaskkCard = () => {
                   onChange={(e) => setEditText(e.target.value)}
                   onBlur={() => handleSaveEdit(task.id)}
                   autoFocus
+                  maxLength={40}
                 />
               ) : (
                 <span
@@ -114,12 +115,19 @@ const TaskkCard = () => {
                   {task.title}
                 </span>
               )}
-              <span className={`priority-tag ${task.priority.toLowerCase()}`}>
+              <span
+                className={`priority-tag ${task.priority.toLowerCase()}`}
+                onClick={() => setShowPriorityDropdown(task.id)}
+              >
                 {task.priority}
               </span>
-              <button className="status-btn">
-                <IoIosArrowDown />
-              </button>
+              {showPriorityDropdown === task.id && (
+                <div className="priority-dropdown">
+                  <div onClick={() => handlePriorityChange(task.id, "High")}>High</div>
+                  <div onClick={() => handlePriorityChange(task.id , "Medium")}>Medium</div>
+                  <div onClick={() => handlePriorityChange(task.id, "Low")}>Low</div>
+                </div>
+              )}
               <button className="edit-btn" onClick={() => handleEditTask(task)}>
                 <MdModeEdit />
               </button>
