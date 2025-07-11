@@ -1,5 +1,5 @@
 .taskcard {
-  margin-left: 270px; /* Adjust based on sidebar width + padding */
+  margin-left: 270px;
   padding: 20px;
   background-color: #ffffff;
   border-radius: 15px;
@@ -36,6 +36,59 @@ body.dark .taskcard-head h1 {
   gap: 10px;
 }
 
+form {
+  display: flex;
+  gap: 10px;
+}
+
+form input[type="text"] {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+body.dark form input[type="text"] {
+  background-color: #1a1a1a;
+  border-color: #2f3336;
+  color: #e7e9ea;
+}
+
+form button[type="submit"] {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4a90e2;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.2s;
+}
+
+body.dark form button[type="submit"] {
+  background-color: #1da1f2;
+}
+
+form button[type="submit"]:hover {
+  background-color: #357abd;
+}
+
+body.dark form button[type="submit"]:hover {
+  background-color: #1e87c9;
+}
+
+.taskcard-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .task-item {
   display: flex;
   align-items: center;
@@ -52,6 +105,20 @@ body.dark .task-item {
 .task-item input[type="checkbox"] {
   margin: 0;
   cursor: pointer;
+}
+
+.task-item input[type="text"] {
+  flex-grow: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+body.dark .task-item input[type="text"] {
+  background-color: #1a1a1a;
+  border-color: #2f3336;
+  color: #e7e9ea;
 }
 
 .task-title {
@@ -113,92 +180,27 @@ body.dark .low {
   color: #66bb6a;
 }
 
-.finish-btn {
-  padding: 6px 12px;
+.delete-btn, .edit-btn {
+  padding: 6px;
   border: none;
-  border-radius: 6px;
-  background-color: #4a90e2;
-  color: #ffffff;
+  border-radius: 4px;
+  background: none;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: color 0.2s;
 }
 
-body.dark .finish-btn {
-  background-color: #1da1f2;
+body.light .delete-btn, body.light .edit-btn {
+  color: #666;
 }
 
-.finish-btn:hover {
-  background-color: #357abd;
+body.dark .delete-btn, body.dark .edit-btn {
+  color: #71767b;
 }
 
-body.dark .finish-btn:hover {
-  background-color: #1e87c9;
+.delete-btn:hover, .edit-btn:hover {
+  color: #d32f2f;
 }
 
-form {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-form input[type="text"] {
-  flex-grow: 1;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 14px;
-}
-
-body.dark form input[type="text"] {
-  background-color: #1a1a1a;
-  border-color: #2f3336;
-  color: #e7e9ea;
-}
-
-form button[type="submit"] {
-  padding: 8px 16px;
-  border: none;
-  border-radius: 8px;
-  background-color: #4a90e2;
-  color: #ffffff;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-body.dark form button[type="submit"] {
-  background-color: #1da1f2;
-}
-
-form button[type="submit"]:hover {
-  background-color: #357abd;
-}
-
-body.dark form button[type="submit"]:hover {
-  background-color: #1e87c9;
-}
-
-form button[type="button"] {
-  padding: 8px 16px;
-  border: none;
-  border-radius: 8px;
-  background-color: #e0e0e0;
-  color: #333;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  transition: background-color 0.2s;
-}
-
-body.dark form button[type="button"] {
-  background-color: #2f3336;
-  color: #e7e9ea;
-}
-
-form button[type="button"]:hover {
-  background-color: #d3d3d3;
-}
-
-body.dark form button[type="button"]:hover {
-  background-color: #3d4043;
+body.dark .delete-btn:hover, body.dark .edit-btn:hover {
+  color: #ef5350;
 }

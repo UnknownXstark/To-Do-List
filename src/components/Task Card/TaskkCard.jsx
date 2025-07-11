@@ -93,11 +93,6 @@ const TaskkCard = () => {
                   {task.title}
                 </span>
               )}
-              <span
-                className={`priority-tag ${task.completed ? "completed" : ""}`}
-              >
-                {task.title}
-              </span>
               <span className={`priority-tag ${task.priority.toLowerCase()}`}>
                 {task.priority}
               </span>
