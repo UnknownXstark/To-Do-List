@@ -29,6 +29,10 @@ const TaskkCard = () => {
         <h1>Todays Task.</h1>
       </div>
       <div className="taskcard-tasks">
+        {tasks.map(task => (
+          <div className="task-item" key={task.id}>
+            <input type="checkbox" checked={task.completed} onChange={() => handleToggleComplete(task.id
+        ))}
         <form>
           <input type="text" placeholder="What are your plans?" />
 
@@ -37,6 +41,9 @@ const TaskkCard = () => {
             <CgMathPlus /> Add task
           </button>
         </form>
+        <ul className="taskcard-list">
+
+        </ul>
       </div>
     </div>
   );
