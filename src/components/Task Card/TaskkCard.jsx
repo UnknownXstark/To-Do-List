@@ -85,6 +85,7 @@ const TaskkCard = () => {
             placeholder="What are your plans?"
             value={newTask}
             onChange={(e) => setNewTask(e.target.value)}
+            maxLength={40}
           />
 
           <button type="submit">
@@ -118,14 +119,34 @@ const TaskkCard = () => {
               <span
                 className={`priority-tag ${task.priority.toLowerCase()}`}
                 onClick={() => setShowPriorityDropdown(task.id)}
+                ref={priorityRef}
               >
                 {task.priority}
               </span>
               {showPriorityDropdown === task.id && (
-                <div className="priority-dropdown">
-                  <div onClick={() => handlePriorityChange(task.id, "High")}>High</div>
-                  <div onClick={() => handlePriorityChange(task.id , "Medium")}>Medium</div>
-                  <div onClick={() => handlePriorityChange(task.id, "Low")}>Low</div>
+                <div
+                  className="priority-dropdown"
+                  style={{
+                    position: "absolute",
+                    top: priorityRef.current
+                      ? priorityRef.current.getBoundingClientRect().bottom +
+                        window.scrollY
+                      : 0,
+                    left: priorityRef.current
+                      ? priorityRef.current.getBoundingClientRect().left +
+                        window.scrollX
+                      : 0,
+                  }}
+                >
+                  <div onClick={() => handlePriorityChange(task.id, "High")}>
+                    High
+                  </div>
+                  <div onClick={() => handlePriorityChange(task.id, "Medium")}>
+                    Medium
+                  </div>
+                  <div onClick={() => handlePriorityChange(task.id, "Low")}>
+                    Low
+                  </div>
                 </div>
               )}
               <button className="edit-btn" onClick={() => handleEditTask(task)}>
