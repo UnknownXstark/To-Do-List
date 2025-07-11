@@ -18,7 +18,7 @@ body.dark .taskcard {
 
 .taskcard-head h1 {
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 800;
   margin: 0;
 }
 
@@ -59,7 +59,7 @@ form button[type="submit"] {
   padding: 8px 16px;
   border: none;
   border-radius: 8px;
-  background-color: #4a90e2;
+  background-color:blue;
   color: #ffffff;
   cursor: pointer;
   display: flex;

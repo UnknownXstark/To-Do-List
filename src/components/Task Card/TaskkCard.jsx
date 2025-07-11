@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./TaskCard.css";
 import { CgMathPlus } from "react-icons/cg";
-import { MdDelete, MdModeEdit } from "react-icons/md";
+import { MdModeEdit } from "react-icons/md";
+import { FiTrash } from "react-icons/fi";
 
 const TaskkCard = () => {
   const [tasks, setTasks] = useState([]);
@@ -96,11 +97,14 @@ const TaskkCard = () => {
               <span className={`priority-tag ${task.priority.toLowerCase()}`}>
                 {task.priority}
               </span>
-              <button className="edit-btn" onClick={handleEditTask}>
+              <button className="edit-btn" onClick={() => handleEditTask(task)}>
                 <MdModeEdit />
               </button>
-              <button className="delete-btn" onClick={handleDeleteTask}>
-                <MdDelete />
+              <button
+                className="delete-btn"
+                onClick={() => handleDeleteTask(task.id)}
+              >
+                <FiTrash />
               </button>
             </div>
           ))}
