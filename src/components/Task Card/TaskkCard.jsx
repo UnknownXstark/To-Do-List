@@ -29,11 +29,12 @@ const TaskkCard = () => {
           id: Date.now(),
           title: newTask,
           completed: false,
-          priority: "Medium",
+          priority: selectedPriority,
         },
       ];
       setTasks(updatedTasks);
       setNewTask("");
+      setSelectedPriority("Medium");
     }
     localStorage.setItem("task", JSON.stringify(tasks));
   };
@@ -62,6 +63,14 @@ const TaskkCard = () => {
     setTasks(updatedTasks);
     setEditingTask(null);
     setEditText("");
+  };
+
+  const handlePriorityChange = (id, newPriority) => {
+    const updatedTasks = tasks.map((task) =>
+      task.id === id ? { ...task, priority: newPriority } : task
+    );
+    setTasks(updatedTasks);
+    setShowPriorityDropdown(null);
   };
 
   return (
