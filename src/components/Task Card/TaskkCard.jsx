@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./TaskCard.css";
 import { CgMathPlus } from "react-icons/cg";
 import { MdModeEdit } from "react-icons/md";
@@ -72,6 +72,8 @@ const TaskkCard = () => {
     setTasks(updatedTasks);
     setShowPriorityDropdown(null);
   };
+
+  const priorityRef = useRef(null);
 
   return (
     <div className="taskcard">
