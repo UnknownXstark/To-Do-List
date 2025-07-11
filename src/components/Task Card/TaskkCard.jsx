@@ -13,6 +13,8 @@ const TaskkCard = () => {
   const [newTask, setNewTask] = useState("");
   const [editingTask, setEditingTask] = useState(null);
   const [editText, setEditText] = useState("");
+  const [showPriorityDropdown, setShowPriorityDropdown] = useState(null);
+  const [selectedPriority, setSelectedPriority] = useState("Medium");
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -106,7 +108,9 @@ const TaskkCard = () => {
               <span className={`priority-tag ${task.priority.toLowerCase()}`}>
                 {task.priority}
               </span>
-              <button className="status-btn"><IoIosArrowDown /></button>
+              <button className="status-btn">
+                <IoIosArrowDown />
+              </button>
               <button className="edit-btn" onClick={() => handleEditTask(task)}>
                 <MdModeEdit />
               </button>
