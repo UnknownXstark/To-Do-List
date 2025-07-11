@@ -66,7 +66,6 @@ const TaskkCard = () => {
             onChange={(e) => setNewTask(e.target.value)}
           />
 
-          {/* <button type="submit">Finish</button> */}
           <button type="submit">
             <CgMathPlus /> Add task
           </button>
@@ -79,6 +78,21 @@ const TaskkCard = () => {
                 checked={task.completed}
                 onChange={() => handleToggleComplete(task.id)}
               />
+              {editingTask === task.id ? (
+                <input
+                  type="text"
+                  value={editText}
+                  onChange={(e) => setEditText(e.target.value)}
+                  onBlur={() => handleSaveEdit(task.id)}
+                  autoFocus
+                />
+              ) : (
+                <span
+                  className={`task-title ${task.completed ? "completed" : ""}`}
+                >
+                  {task.title}
+                </span>
+              )}
               <span
                 className={`priority-tag ${task.completed ? "completed" : ""}`}
               >
@@ -87,11 +101,11 @@ const TaskkCard = () => {
               <span className={`priority-tag ${task.priority.toLowerCase()}`}>
                 {task.priority}
               </span>
-              <button className="delete-btn">
-                <MdDelete />
-              </button>
-              <button className="edit-btn">
+              <button className="edit-btn" onClick={handleEditTask}>
                 <MdModeEdit />
+              </button>
+              <button className="delete-btn" onClick={handleDeleteTask}>
+                <MdDelete />
               </button>
             </div>
           ))}
