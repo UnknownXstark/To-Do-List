@@ -32,7 +32,26 @@ const TaskkCard = () => {
       )
     );
   };
-  
+
+  const handleDeleteTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
+
+  const handleEditTask = (task) => {
+    setEditingTask(task.id);
+    setEditText(task.title);
+  };
+
+  const handleSaveEdit = (id) => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === id ? { ...task, title: editText } : task
+      )
+    );
+    setEditingTask(null);
+    setEditText("");
+  };
+
   return (
     <div className="taskcard">
       <div className="taskcard-head">
