@@ -18,7 +18,7 @@ body.dark .taskcard {
 
 .taskcard-head h1 {
   font-size: 24px;
-  font-weight: 800;
+  font-weight: 600;
   margin: 0;
 }
 
@@ -47,6 +47,7 @@ form input[type="text"] {
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 14px;
+  max-width: 100%; /* Ensure it doesn't overflow */
 }
 
 body.dark form input[type="text"] {
@@ -59,7 +60,7 @@ form button[type="submit"] {
   padding: 8px 16px;
   border: none;
   border-radius: 8px;
-  background-color:blue;
+  background-color: #4a90e2;
   color: #ffffff;
   cursor: pointer;
   display: flex;
@@ -86,16 +87,14 @@ body.dark form button[type="submit"]:hover {
   margin: 10px 0 0 0;
   display: flex;
   flex-direction: column;
-  /* gap: 10px; */
 }
 
 .task-item {
   display: flex;
   align-items: center;
   padding: 10px;
-  /* background-color: #f9f9f9; */
-  /* border-radius: 8px; */
   gap: 10px;
+  position: relative;
   border-bottom: 1px solid #ccc;
 }
 
@@ -114,6 +113,7 @@ body.dark .task-item {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
+  max-width: 100%;
 }
 
 body.dark .task-item input[type="text"] {
@@ -125,6 +125,10 @@ body.dark .task-item input[type="text"] {
 .task-title {
   flex-grow: 1;
   font-size: 16px;
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Add ellipsis for long text */
+  max-width: 200px; /* Adjust based on layout */
 }
 
 body.light .task-title {
@@ -149,6 +153,8 @@ body.dark .task-title.completed {
   border-radius: 4px;
   font-size: 12px;
   font-weight: 500;
+  cursor: pointer;
+  position: relative;
 }
 
 .high {
@@ -181,7 +187,17 @@ body.dark .low {
   color: #66bb6a;
 }
 
-.delete-btn, .edit-btn {
+.status-btn {
+  padding: 6px;
+  border: none;
+  border-radius: 4px;
+  background: none;
+  cursor: pointer;
+  transition: color 0.2s;
+  display: none; /* Hidden by default, shown via JS */
+}
+
+.edit-btn, .delete-btn {
   padding: 6px;
   border: none;
   border-radius: 4px;
@@ -190,18 +206,48 @@ body.dark .low {
   transition: color 0.2s;
 }
 
-body.light .delete-btn, body.light .edit-btn {
+body.light .edit-btn, body.light .delete-btn, body.light .status-btn {
   color: #666;
 }
 
-body.dark .delete-btn, body.dark .edit-btn {
+body.dark .edit-btn, body.dark .delete-btn, body.dark .status-btn {
   color: #71767b;
 }
 
-.delete-btn:hover, .edit-btn:hover {
+.edit-btn:hover, .delete-btn:hover, .status-btn:hover {
   color: #d32f2f;
 }
 
-body.dark .delete-btn:hover, body.dark .edit-btn:hover {
+body.dark .edit-btn:hover, body.dark .delete-btn:hover, body.dark .status-btn:hover {
   color: #ef5350;
+}
+
+.priority-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  min-width: 100px;
+}
+
+body.dark .priority-dropdown {
+  background-color: #1a1a1a;
+  border-color: #2f3336;
+}
+
+.priority-dropdown div {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.priority-dropdown div:hover {
+  background-color: #f0f0f0;
+}
+
+body.dark .priority-dropdown div:hover {
+  background-color: #2f3336;
 }
