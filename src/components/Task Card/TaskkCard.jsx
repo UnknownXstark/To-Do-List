@@ -3,6 +3,7 @@ import "./TaskCard.css";
 import { CgMathPlus } from "react-icons/cg";
 import { MdModeEdit } from "react-icons/md";
 import { FiTrash } from "react-icons/fi";
+import { IoIosArrowDown } from "react-icons/io";
 
 const TaskkCard = () => {
   const [tasks, setTasks] = useState(() => {
@@ -105,6 +106,7 @@ const TaskkCard = () => {
               <span className={`priority-tag ${task.priority.toLowerCase()}`}>
                 {task.priority}
               </span>
+              <button className="status-btn"><IoIosArrowDown /></button>
               <button className="edit-btn" onClick={() => handleEditTask(task)}>
                 <MdModeEdit />
               </button>

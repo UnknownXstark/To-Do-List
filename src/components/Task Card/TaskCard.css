@@ -86,16 +86,17 @@ body.dark form button[type="submit"]:hover {
   margin: 10px 0 0 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  /* gap: 10px; */
 }
 
 .task-item {
   display: flex;
   align-items: center;
   padding: 10px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
+  /* background-color: #f9f9f9; */
+  /* border-radius: 8px; */
   gap: 10px;
+  border-bottom: 1px solid #ccc;
 }
 
 body.dark .task-item {
