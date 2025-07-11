@@ -1,19 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./TaskCard.css";
 import { CgMathPlus } from "react-icons/cg";
 import { MdModeEdit } from "react-icons/md";
 import { FiTrash } from "react-icons/fi";
 
 const TaskkCard = () => {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(() => {
+    const storedTasks = localStorage.getItem("tasks");
+    return storedTasks ? JSON.parse(storedTasks) : [];
+  });
   const [newTask, setNewTask] = useState("");
   const [editingTask, setEditingTask] = useState(null);
   const [editText, setEditText] = useState("");
 
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
   const handleAddTask = (e) => {
     e.preventDefault();
     if (newTask.trim()) {
-      setTasks([
+      const updatedTasks = [
         ...tasks,
         {
           id: Date.now(),
@@ -21,21 +28,23 @@ const TaskkCard = () => {
           completed: false,
           priority: "Medium",
         },
-      ]);
+      ];
+      setTasks(updatedTasks);
       setNewTask("");
     }
+    localStorage.setItem("task", JSON.stringify(tasks));
   };
 
   const handleToggleComplete = (id) => {
-    setTasks(
-      tasks.map((task) =>
-        task.id === id ? { ...task, completed: !task.completed } : task
-      )
+    const updatedTasks = tasks.map((task) =>
+      task.id === id ? { ...task, completed: !task.completed } : task
     );
+    setTasks(updatedTasks);
   };
 
   const handleDeleteTask = (id) => {
-    setTasks(tasks.filter((task) => task.id !== id));
+    const updatedTasks = tasks.filter((task) => task.id !== id);
+    setTasks(updatedTasks);
   };
 
   const handleEditTask = (task) => {
@@ -44,11 +53,10 @@ const TaskkCard = () => {
   };
 
   const handleSaveEdit = (id) => {
-    setTasks(
-      tasks.map((task) =>
-        task.id === id ? { ...task, title: editText } : task
-      )
+    const updatedTasks = tasks.map((task) =>
+      task.id === id ? { ...task, title: editText } : task
     );
+    setTasks(updatedTasks);
     setEditingTask(null);
     setEditText("");
   };
