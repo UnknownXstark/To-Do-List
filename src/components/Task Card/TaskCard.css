@@ -33,7 +33,7 @@ body.dark .taskcard-head h1 {
 .taskcard-tasks {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px; /* Increased for better spacing */
 }
 
 form {
@@ -47,7 +47,7 @@ form input[type="text"] {
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 14px;
-  max-width: 100%; /* Ensure it doesn't overflow */
+  max-width: 100%;
 }
 
 body.dark form input[type="text"] {
@@ -84,18 +84,19 @@ body.dark form button[type="submit"]:hover {
 .taskcard-list {
   list-style: none;
   padding: 0;
-  margin: 10px 0 0 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
+  gap: 15px; /* Increased for better spacing */
 }
 
 .task-item {
   display: flex;
   align-items: center;
   padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
   gap: 10px;
-  position: relative;
-  border-bottom: 1px solid #ccc;
 }
 
 body.dark .task-item {
@@ -125,10 +126,10 @@ body.dark .task-item input[type="text"] {
 .task-title {
   flex-grow: 1;
   font-size: 16px;
-  white-space: nowrap; /* Prevent wrapping */
-  overflow: hidden; /* Hide overflow */
-  text-overflow: ellipsis; /* Add ellipsis for long text */
-  max-width: 200px; /* Adjust based on layout */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
 }
 
 body.light .task-title {
@@ -155,6 +156,7 @@ body.dark .task-title.completed {
   font-weight: 500;
   cursor: pointer;
   position: relative;
+  z-index: 1; /* Ensure it’s above other elements */
 }
 
 .high {
@@ -187,17 +189,8 @@ body.dark .low {
   color: #66bb6a;
 }
 
-.status-btn {
-  padding: 6px;
-  border: none;
-  border-radius: 4px;
-  background: none;
-  cursor: pointer;
-  transition: color 0.2s;
-  display: none; /* Hidden by default, shown via JS */
-}
-
-.edit-btn, .delete-btn {
+.edit-btn,
+.delete-btn {
   padding: 6px;
   border: none;
   border-radius: 4px;
@@ -206,32 +199,38 @@ body.dark .low {
   transition: color 0.2s;
 }
 
-body.light .edit-btn, body.light .delete-btn, body.light .status-btn {
+body.light .edit-btn,
+body.light .delete-btn {
   color: #666;
 }
 
-body.dark .edit-btn, body.dark .delete-btn, body.dark .status-btn {
+body.dark .edit-btn,
+body.dark .delete-btn {
   color: #71767b;
 }
 
-.edit-btn:hover, .delete-btn:hover, .status-btn:hover {
+.edit-btn:hover,
+.delete-btn:hover {
   color: #d32f2f;
 }
 
-body.dark .edit-btn:hover, body.dark .delete-btn:hover, body.dark .status-btn:hover {
+body.dark .edit-btn:hover,
+body.dark .delete-btn:hover {
   color: #ef5350;
 }
 
 .priority-dropdown {
   position: absolute;
-  top: 100%;
+  top: 0;
   left: 0;
+  transform: translateY(100%); /* Move below the priority-tag */
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 10;
+  z-index: 1000; /* Ensure it’s above other tasks */
   min-width: 100px;
+  animation: fadeIn 0.2s ease-in-out;
 }
 
 body.dark .priority-dropdown {
@@ -250,4 +249,15 @@ body.dark .priority-dropdown {
 
 body.dark .priority-dropdown div:hover {
   background-color: #2f3336;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(100%);
+  }
 }
