@@ -36,7 +36,6 @@ const TaskkCard = () => {
       setNewTask("");
       setSelectedPriority("Medium");
     }
-    localStorage.setItem("task", JSON.stringify(tasks));
   };
 
   const handleToggleComplete = (id) => {
@@ -89,14 +88,13 @@ const TaskkCard = () => {
             onChange={(e) => setNewTask(e.target.value)}
             maxLength={40}
           />
-
           <button type="submit">
             <CgMathPlus /> Add task
           </button>
         </form>
         <ul className="taskcard-list">
           {tasks.map((task) => (
-            <div className="task-item" key={task.id}>
+            <li className="task-item" key={task.id}>
               <input
                 type="checkbox"
                 checked={task.completed}
@@ -138,23 +136,15 @@ const TaskkCard = () => {
                       ? priorityRef.current.getBoundingClientRect().left +
                         window.scrollX
                       : 0,
+                    width: priorityRef.current
+                      ? priorityRef.current.getBoundingClientRect().width
+                      : "auto",
                   }}
                 >
                   <ul>
                     <li onClick={() => handlePriorityChange(task.id, "High")}>High</li>
                     <li onClick={() => handlePriorityChange(task.id, "Medium")}>Medium</li>
                     <li onClick={() => handlePriorityChange(task.id, "Low")}>Low</li>
-                    {/* <div onClick={() => handlePriorityChange(task.id, "High")}>
-                      High
-                    </div>
-                    <div
-                      onClick={() => handlePriorityChange(task.id, "Medium")}
-                    >
-                      Medium
-                    </div>
-                    <div onClick={() => handlePriorityChange(task.id, "Low")}>
-                      Low
-                    </div> */}
                   </ul>
                 </div>
               )}
@@ -167,7 +157,7 @@ const TaskkCard = () => {
               >
                 <FiTrash />
               </button>
-            </div>
+            </li>
           ))}
         </ul>
       </div>

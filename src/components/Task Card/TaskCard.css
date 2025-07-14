@@ -220,11 +220,11 @@ body.dark .delete-btn:hover {
 }
 
 .priority-dropdown {
-  display: none;
+  display: block;
   position: absolute;
-  top: 90%;
+  top: 100%;
   left: 0;
-  transform: translateY(100%); /* Move below the priority-tag */
+  transform: translateX(0%); /* Move below the priority-tag */
   background-color: #fff;
   backdrop-filter: blur(20px);
   color: black;
@@ -232,8 +232,9 @@ body.dark .delete-btn:hover {
   border-radius: 4px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000; 
-  min-width: 200px;
+  min-width: 70px;
   animation: fadeIn 0.2s ease-in-out;
+  padding: 0;
 }
 
 body.dark .priority-dropdown {
@@ -242,7 +243,16 @@ body.dark .priority-dropdown {
 }
 
 .priority-dropdown ul {
-  padding: 10px 20px;
+  list-style: none;
+  padding: 0px;
+  margin: 0;
+  font-size: 12px;
+  /* cursor: pointer; */
+  /* color: black; */
+}
+
+.priority-dropdown li {
+  padding: 8px 16px;
   cursor: pointer;
   color: black;
 }
