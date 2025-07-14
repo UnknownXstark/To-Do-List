@@ -140,15 +140,22 @@ const TaskkCard = () => {
                       : 0,
                   }}
                 >
-                  <div onClick={() => handlePriorityChange(task.id, "High")}>
-                    High
-                  </div>
-                  <div onClick={() => handlePriorityChange(task.id, "Medium")}>
-                    Medium
-                  </div>
-                  <div onClick={() => handlePriorityChange(task.id, "Low")}>
-                    Low
-                  </div>
+                  <ul>
+                    <li onClick={() => handlePriorityChange(task.id, "High")}>High</li>
+                    <li onClick={() => handlePriorityChange(task.id, "Medium")}>Medium</li>
+                    <li onClick={() => handlePriorityChange(task.id, "Low")}>Low</li>
+                    {/* <div onClick={() => handlePriorityChange(task.id, "High")}>
+                      High
+                    </div>
+                    <div
+                      onClick={() => handlePriorityChange(task.id, "Medium")}
+                    >
+                      Medium
+                    </div>
+                    <div onClick={() => handlePriorityChange(task.id, "Low")}>
+                      Low
+                    </div> */}
+                  </ul>
                 </div>
               )}
               <button className="edit-btn" onClick={() => handleEditTask(task)}>
